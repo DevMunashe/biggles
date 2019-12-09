@@ -37,7 +37,7 @@ class TabTwoScreen extends StatelessWidget {
                 height: 120.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/pink.jpg'),
+                    image: AssetImage('images/shrink.jpg'),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(6.0),
@@ -54,7 +54,7 @@ class TabTwoScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          'Popular Books',
+                          'Best Selling',
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
@@ -107,8 +107,8 @@ class TabTwoScreen extends StatelessWidget {
                     ),
                   ),
                   new MayLikeBooks(
-                    bookImage: 'images/korluk.jpg',
-                    bookName: 'Körlük',
+                    bookImage: 'images/killer.jpg',
+                    bookName: 'THE KILLER IN HER CLOSET',
                   ),
                   new MayLikeBooks(
                     bookImage: 'images/cani.jpg',
@@ -141,7 +141,11 @@ class MayLikeBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+      child: SingleChildScrollView(
+         scrollDirection: Axis.horizontal,
+      
       child: Container(
+        
         height: 140.0,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -188,7 +192,7 @@ class MayLikeBooks extends StatelessWidget {
                     height: 4.0,
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, qui harum\nelitr an, at lobortis incor rupte per, odio\nagam eam an.',
+                    'Revered by some and hated \n by others, the Lake family \n takes center stage in this\n gripping epic mystery...',
                     style: TextStyle(
                       color: Color(0xFFBBCCCC),
                       fontSize: 14.0,
@@ -235,10 +239,10 @@ class MayLikeBooks extends StatelessWidget {
           ),
         ),
       ),
+      )
     );
-  }
 }
-
+}
 class FeaturedFreeBooks extends StatelessWidget {
   final String bookImg;
   final String bookName;
@@ -278,13 +282,17 @@ class FeaturedFreeBooks extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            Text(
+            Padding(
+                   padding:
+                   const EdgeInsets.symmetric(vertical: 6.0),
+            child: Text(
               bookName,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 13.0,
                 fontWeight: FontWeight.bold,
               ),
+            ),
             ),
             SizedBox(
               height: 2.0,
@@ -313,7 +321,7 @@ class FeaturedFreeBooks extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: Color(0xFFBBCCCC),
+                  color: Color(0xFFEEBA06),
                   size: 14.0,
                 ),
               ],
@@ -322,7 +330,7 @@ class FeaturedFreeBooks extends StatelessWidget {
               height: 2.0,
             ),
             Text(
-              '\$ ' + bookPrice.toString(),
+              '\P ' + bookPrice.toString(),
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 12.0,
